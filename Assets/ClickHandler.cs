@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -27,13 +28,19 @@ public class ClickHandler : UIBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+
         Debug.Log("onpointer click");
         var raycastResult = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, raycastResult);
+//        foreach (var result in raycastResult)
+//        {
+//            Debug.Log("result : " + result.gameObject.name);
+//        }
 
         if (raycastResult.Any(ray => ray.gameObject.name.Equals(target.name)))
         {
-            ExecuteEvents.Execute(target, eventData, ExecuteEvents.pointerClickHandler);
+        //    ExecuteEvents.Execute(target, eventData, ExecuteEvents.pointerClickHandler);
+            EventSystem.current.SetSelectedGameObject(target);
         }
 
 
