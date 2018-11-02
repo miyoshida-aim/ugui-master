@@ -58,9 +58,9 @@ Material:
     m_Floats:
     - _BlendDst: 1
     - _BlendSrc: 5
-    - _BlinkMax: 0.16
-    - _BlinkMin: 1.51
-    - _BlinkSpeed: 1.12
+    - _BlinkMax: 0.63
+    - _BlinkMin: -0.01
+    - _BlinkSpeed: 3.07
     - _BumpScale: 1
     - _ColorMask: 15
     - _Cutoff: 0.5
